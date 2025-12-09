@@ -1,0 +1,21 @@
+train:
+  random_state: 42
+  test_size: 0.2
+
+  vectorizer:
+    max_features: 5000
+    ngram_range: [1, 2]
+    stop_words: "english"
+
+  model:
+    type: "LogisticRegression"
+    max_iter: 1000
+    n_jobs: -1
+
+  data:
+    path: "data/raw/IMDB Dataset.csv"
+    source: "Kaggle: IMDB Dataset of 50k Movie Reviews"
+
+inference:
+  model_path: "models/logreg_imdb.joblib"
+  vectorizer_path: "models/tfidf_imdb.joblib"
