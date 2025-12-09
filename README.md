@@ -213,3 +213,17 @@ POST /predict
 * инференс-сервис на FastAPI
 * контейнеризация через Docker
 * конфигурация через YAML
+
+# **10. Пайплайн**
+
+## 2.1. Схема пайплайна
+
+```mermaid
+flowchart LR
+    A[IMDB Dataset.csv<br/>data/raw] --> B[Предобработка и обучение<br/>01_baseline_imdb.ipynb]
+    B --> C[Эксперименты в ClearML<br/>logreg_tfidf_v1 / v2 / unigram]
+    B --> D[Артефакты модели<br/>logreg_imdb.joblib<br/>tfidf_imdb.joblib]
+    D --> E[Инференс-сервис FastAPI<br/>app/main.py]
+    E --> F[Docker-образ<br/>mlops-movie-sentiment]
+    F --> G[Клиент<br/>curl /predict или Swagger UI]
+```
