@@ -1,0 +1,33 @@
+# Виртуальное окружение
+.venv/
+venv/
+
+# Python байткод
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Логи
+*.log
+
+# Jupyter служебные файлы
+.ipynb_checkpoints/
+
+# Данные (сырые и промежуточные)
+data/raw/
+data/interim/
+data/processed/
+
+# Модели и артефакты
+models/
+artifacts/
+
+# Настройки IDE
+.vscode/
+.idea/
+
+# MacOS системные файлы
+.DS_Store
+
+# Кэш
+*.cache
